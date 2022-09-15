@@ -30,7 +30,7 @@ body{
 header{
     padding-bottom: 15px;
     background: var(--white);
-    background: linear-gradient(180deg, var(--white) 0%, rgb(240, 165, 136) 100%);
+    background: linear-gradient(180deg, var(--white) 0%, rgb(166, 197, 181) 100%);
     user-select: none;
     -webkit-user-select: none;
 }
