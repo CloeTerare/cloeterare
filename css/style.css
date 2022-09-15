@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+/* Colors: */
+    --black: rgb(53, 53, 53);
+    --white: rgb(243, 243, 243);
+    --blue: rgb(100, 148, 237);
+/* Fonts: */
+    --roboto: 'Roboto', sans-serif;
+    --roboto-slab: 'Roboto Slab', serif;
+    --open-sans: 'Open Sans', sans-serif;
+}
+
+*{
+    color: inherit;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--roboto);
+    font-size: 18px;
+    color: var(--black);
+    background-color: var(--white);
+}
+
+header{
+    padding-bottom: 15px;
+    background: var(--white);
+    background: linear-gradient(180deg, var(--white) 0%, rgb(240, 165, 136) 100%);
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+section{
+    padding: 60px 0;
+}
+
+#events h1{
+    font-size: 48px;
+    font-weight: normal;
+}
+
+.container{
+    width: 100vw;
+}
+
+.mb30{
+    margin-bottom: 30px;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.justify-around{
+    justify-content: space-around;
+}
+.justify-center{
+    justify-content: center;
+}
+
+.elipse{
+    display: block;
+    border-radius: 50%;
+}
+
+#name-header{
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+nav{
+    margin: 10px 10px;
+}
+nav a{
+    display: block;
+    font-size: larger;
+    height: 2rem;
+    margin: 0 15px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: var(--black);
+    transition: padding 0.1s ease;
+}
+
+nav a:hover{
+    padding-top: 1px;
+    padding-bottom: 9px;
+    color: var(--blue);
+}
+
+.current-page{
+    color: rgb(149, 123, 122);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: rgba(243, 243, 243, 0.65);
+    box-shadow: 0px 15px 2px 15px rgba(243, 243, 243, 0.65);
+}
+
+.current-page:hover{
+    padding-top: 5px;
+    border: none;
+}
+
+#socials-header{
+    display: flex;
+    margin: 0 10px;
+    font-size: 30px;
+}
+#socials-header a{
+    display: block;
+    padding: 5px 14px 0 14px;
+    color: rgb(16, 82, 82);
+    transition: padding 0.1s ease;
+}
+#socials-header a:hover{
+    padding-top: 1px;
+    color: var(--blue);
+}
+
+.event-row{
+    display: block;
+    width: 95vw;
+    padding: 10px 5px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: var(--roboto-slab);
+    border-bottom: 4px solid;
+    transition: background-color 1s;
+}
+
+.event-row:hover{
+    background-color: rgb(225, 232, 253);
+}
+
+.event-date{
+    display: inline-block;
+    width: 6.5rem;
+    padding: 0.5rem 0px;
+    border-right: 3px solid rgb(196, 196, 196);
+}
+
+.event-name{
+    display: inline-block;
+    padding: 0.5rem 0 0.5rem 2.5rem;
+    width: 60%;
+}
+
+.read-more{
+    color: var(--blue);
+    font-family: var(--open-sans);
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#lights-animation{
+    display: none;
+    position: relative;
+    overflow: hidden;
+    height: 275px;
+    width: 275px;
+    margin-top: 50px;
+    border-radius: 35px;
+    background-color: var(--black);
+}
+
+.spotlight{
+    position: absolute;
+    width: 54px;
+    height: 54px;
+    border: solid 1px;
+    border-radius: 50%;
+    animation-play-state: paused;
+}
+
+#blue-light{
+    left: 50px;
+    top: 50px;
+    opacity: 0.65;
+    background-color: rgb(129, 129, 248);
+    border-color: rgb(129, 129, 248);;
+    box-shadow: 0 0 20px 20px rgb(129, 129, 248);
+    animation-name: light-blue-animation;
+    animation-duration: 5s;
+    animation-delay: 0.2s;
+    animation-timing-function: cubic-bezier(0.2, 1, 0.175, 2);
+    animation-iteration-count: infinite;
+}
+
+#red-light{
+    left: 10px;
+    top: 200px;
+    opacity: 0.65;
+    background-color: rgb(250, 43, 43);
+    border-color: rgb(250, 43, 43);
+    box-shadow: 0 0 20px 20px rgb(250, 43, 43);
+    animation-name: light-red-animation;
+    animation-duration: 5s;
+    animation-delay: 0.2s;
+    animation-timing-function: cubic-bezier(0.2, 1, 0.175, 2);
+    animation-iteration-count: infinite;
+}
+
+#green-light{
+    left: 200px;
+    top: 200px;
+    opacity: 0.65;
+    background-color: rgb(43, 250, 60);
+    border-color: rgb(43, 250, 60);
+    box-shadow: 0 0 20px 20px rgb(43, 250, 60);
+    animation-name: light-green-animation;
+    animation-duration: 5s;
+    animation-delay: 0.2s;
+    animation-timing-function: cubic-bezier(0.2, 1, 0.175, 2);
+    animation-iteration-count: infinite;
+}
+
+#promo{
+    background: var(--white);
+    background: linear-gradient(180deg, var(--white) 0%, rgb(168, 168, 168) 100%);
+
+}
+
+#promo>div{
+    position: relative;
+}
+
+#promo h1{    
+    font-size: 36px;
+    font-weight: normal;
+    color: rgb(31, 103, 127);
+}
+
+#shape1{
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    height: 160px;
+    width: 180px;
+}
+
+#shape2{
+    display: none;
+    position: absolute;
+    bottom: -90px;
+    left: 0px;
+    height: 150px;
+    width: 200px;
+}
+
+@media (min-width: 1200px) {
+    section{
+        padding: 120px 0;
+    }
+
+    .container{
+        width: 1160px;
+        margin: 0 auto;
+    }
+
+    #name-header{
+        font-size: 60px;
+    }
+
+    .event-row{
+        width: 700px;
+        height: 94px;
+        padding: 25px 5px;
+    }
+
+    #lights-animation{
+        display: block;
+    }
+    .spotlight{
+        animation-play-state: running;
+    }
+    #shape1{
+        display: block;
+        left: 435px;
+    }
+    #shape2{
+        display: block;
+        left: -10px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .container{
+        width: 1500px;
+        margin: 0 auto;
+    }
+    #lights-animation{
+        height: 300px;
+        width: 300px;
+    }
+    #shape1{
+        display: block;
+        left: 635px;
+    }
+    #shape2{
+        display: block;
+        left: 50px;
+    }
+}
+
+@keyframes light-blue-animation{
+    0% {    
+        left: 50px;
+        top: 50px;
+    }
+    25%{
+        left: 200px;
+        top: 50px;
+    }
+    50% {
+        left: 200px;
+        top: 200px;
+    }
+    75%{
+        left: 50px;
+        top: 200px;
+    }
+    100%{
+        left: 50px;
+        top: 50px;
+    }
+}
+@keyframes light-red-animation{
+    0% {    
+        left: 10px;
+        top: 200px;
+    }
+    25%{
+        left: 10px;
+        top: 10px;
+    }
+    50% {
+        left: 150px;
+        top: 10px;
+    }
+    75%{
+        left: 150px;
+        top: 200px;
+    }
+    100%{
+        left: 10px;
+        top: 200px;
+    }
+}
+@keyframes light-green-animation{
+    0% {    
+        left: 200px;
+        top: 200px;
+    }
+    25%{
+        left: 50px;
+        top: 200px;
+    }
+    50% {
+        left: 20px;
+        top: 10px;
+    }
+    75%{
+        left: 180px;
+        top: 50px;
+    }
+    100%{
+        left: 200px;
+        top: 200px;
+    }
+}
