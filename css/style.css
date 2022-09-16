@@ -39,6 +39,12 @@ section{
     padding: 60px 0;
 }
 
+footer{
+    padding: 40px 0;
+    background-color: var(--black);
+    color: var(--white);
+}
+
 #events h1{
     font-size: 48px;
     font-weight: normal;
@@ -230,7 +236,6 @@ nav a:hover{
 #promo{
     background: var(--white);
     background: linear-gradient(180deg, var(--white) 0%, rgb(168, 168, 168) 100%);
-
 }
 
 #promo>div{
@@ -259,6 +264,17 @@ nav a:hover{
     left: 0px;
     height: 150px;
     width: 200px;
+}
+
+#socials-footer{
+    padding: 0 200px;
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+}
+
+#socials-footer a{
+    text-decoration: none;
+    color: rgb(245, 222, 130);
 }
 
 @media (min-width: 1200px) {
