@@ -13,6 +13,8 @@
     --open-sans: 'Open Sans', sans-serif;
 }
 
+/*Mobile first*/
+
 *{
     color: inherit;
     padding: 0;
@@ -40,7 +42,8 @@ section{
 }
 
 footer{
-    padding: 40px 0;
+    font-size: 0.7rem;
+    padding: 40px 10px;
     background-color: var(--black);
     color: var(--white);
 }
@@ -51,7 +54,8 @@ footer{
 }
 
 .container{
-    width: 100vw;
+    width: 100%;
+    padding: 0 5px;
 }
 
 .mb30{
@@ -87,6 +91,7 @@ footer{
 }
 
 nav{
+    display: none;
     margin: 10px 10px;
 }
 nav a{
@@ -121,7 +126,7 @@ nav a:hover{
 
 #socials-header{
     display: flex;
-    margin: 0 10px;
+    margin: 0 auto;
     font-size: 30px;
 }
 #socials-header a{
@@ -136,9 +141,9 @@ nav a:hover{
 }
 
 .event-row{
-    display: block;
+    display: flex;
+    align-items: center;
     width: 95vw;
-    padding: 10px 5px;
     text-decoration: none;
     font-size: 20px;
     font-family: var(--roboto-slab);
@@ -242,13 +247,20 @@ nav a:hover{
     position: relative;
 }
 
-#promo h1{    
-    font-size: 36px;
+#promo h1{
+    margin-left: 5vw;
+    font-size: 28px;
     font-weight: normal;
     color: rgb(31, 103, 127);
 }
 
+#promo img{
+    zoom:0.7;
+}
+
 #shape1{
+    background-repeat: no-repeat;
+    background-image: url("https://cloeterare.github.io/cloeterare/images/shape1.svg");
     display: none;
     position: absolute;
     top: 20px;
@@ -258,6 +270,8 @@ nav a:hover{
 }
 
 #shape2{
+    background-repeat: no-repeat;
+    background-image: url(https://cloeterare.github.io/cloeterare/images/shape2.svg);
     display: none;
     position: absolute;
     bottom: -90px;
@@ -267,8 +281,7 @@ nav a:hover{
 }
 
 #socials-footer{
-    padding: 0 200px;
-    font-size: 0.9rem;
+    font-size: 1em;
     line-height: 1.6rem;
 }
 
@@ -277,6 +290,46 @@ nav a:hover{
     color: rgb(245, 222, 130);
 }
 
+/*Tablet portrait and up*/
+@media (min-width: 600px) {
+
+}
+
+/*Tablet landscape and up*/
+@media (min-width: 900px) {
+    nav{
+        display: flex;
+        justify-content: space-between;
+    }
+    #socials-header{
+        margin: 0 5px;
+    }
+
+    #lights-animation{
+        display: block;
+    }
+
+    .event-row{
+        width: 60vw;
+        height: 94px;
+        padding: 25px 5px;
+    }
+
+    .spotlight{
+        animation-play-state: running;
+    }
+
+    #promo h1{
+        margin-left: 9vw;
+        font-size: 36px;
+    }
+    
+    #promo img{
+        zoom:1;
+    }
+}
+
+/*Small monitor and up*/
 @media (min-width: 1200px) {
     section{
         padding: 120px 0;
@@ -287,22 +340,16 @@ nav a:hover{
         margin: 0 auto;
     }
 
-    #name-header{
-        font-size: 60px;
-    }
-
     .event-row{
-        width: 700px;
+        width: 50vw;
         height: 94px;
         padding: 25px 5px;
     }
 
-    #lights-animation{
-        display: block;
+    #name-header{
+        font-size: 60px;
     }
-    .spotlight{
-        animation-play-state: running;
-    }
+
     #shape1{
         display: block;
         left: 435px;
@@ -311,9 +358,15 @@ nav a:hover{
         display: block;
         left: -10px;
     }
+    #socials-footer{
+        padding: 0 200px;
+        font-size: 0.9rem;
+        line-height: 1.6rem;
+    }
 }
 
-@media (min-width: 1600px) {
+/*Large monitor and up*/
+@media (min-width: 1800px) {
     .container{
         width: 1500px;
         margin: 0 auto;
